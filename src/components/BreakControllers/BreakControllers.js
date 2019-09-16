@@ -29,6 +29,8 @@ class BreakControllers extends Component {
   render() {
     return (
       <div className="controller u-center">
+        <Text>Break Length</Text>
+        <br />
         <Button onClick={this.handleBreakIncrement}> + </Button>
         <Text>{this.props.breakTime}</Text>
         <Button onClick={this.handleBreakDecrement}> - </Button>
@@ -50,7 +52,10 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-export default connect(
+
+const ReduxBreakControllers = connect(
   mapStateToProps,
   mapDispatchToProps
 )(BreakControllers);
+
+export default ReduxBreakControllers;

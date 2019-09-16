@@ -117,10 +117,12 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+const ReduxApp = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+export default ReduxApp;
 
 /*
 

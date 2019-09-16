@@ -61,7 +61,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+const ReduxTimer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Timer);
+
+export default ReduxTimer;

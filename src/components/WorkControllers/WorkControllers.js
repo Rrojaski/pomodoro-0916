@@ -33,6 +33,8 @@ class WorkControllers extends Component {
   render(props) {
     return (
       <div className="controller u-margin-bottom-sm">
+        <Text>Session Length</Text>
+        <br />
         <Button onClick={this.handleWorkIncrement}> + </Button>
         <Text>{this.props.workTime}</Text>
         <Button onClick={this.handleWorkDecrement}> - </Button>
@@ -56,7 +58,10 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-export default connect(
+
+const ReduxWorkControllers = connect(
   mapStateToProps,
   mapDispatchToProps
 )(WorkControllers);
+
+export default ReduxWorkControllers;

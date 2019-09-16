@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
 // Components
-import WorkControllers from "../WorkControllers/WorkControllers";
-import BreakControllers from "../BreakControllers/BreakControllers";
+import ReduxWorkControllers from "../WorkControllers/WorkControllers";
+import ReduxBreakControllers from "../BreakControllers/BreakControllers";
 
 class TimerControllers extends Component {
   render() {
     return (
       <div className="timer-controllers u-text-center u-margin-bottom-md">
-        <WorkControllers />
-        <BreakControllers />
+        <ReduxWorkControllers />
+        <ReduxBreakControllers />
       </div>
     );
   }
