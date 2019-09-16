@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.App {
+  color: $white;
+  background: $blue;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  
+}

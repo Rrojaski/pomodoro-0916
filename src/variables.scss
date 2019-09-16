@@ -1,0 +1,198 @@
+// Color
+$white: #fff;
+$black: #000;
+$red: #df2408;
+$green: #76b848;
+$yellow: #ffbb23;
+$pink: #fc66cc;
+$blue: rgb(26, 115, 232);
+$purple: rgb(65, 0, 153);
+$grey: #bebebe;
+$grey-light: #d3d3d3;
+
+$color-primary: #039;
+$color-secondary: #6798cd;
+
+$color-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+
+// Font Size
+$font-xxl: 10rem;
+$font-xl: 7rem;
+$font-lg: 4rem;
+$font-md: 2rem;
+$font-sm: 1.2rem;
+$font-xs: 1rem;
+
+// Border
+$border-radius-default: 5px;
+
+// Font weight
+$font-weight-xl: 900;
+$font-weight-lg: 800;
+$font-weight-md: 700;
+$font-weight-sm: 600;
+
+// Line height
+$line-height-lg: 4rem;
+$line-height-md: 3rem;
+$line-height-sm: 2rem;
+
+// Default sizes
+$grid-width: 114rem;
+$gutter-horizontal: 1.5rem;
+$gutter-vertical: 0.5rem;
+
+// Sass Mixin
+
+@mixin reset-list {
+  list-style-type: none;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-top {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-bottom {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clear-fix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin reset-anchor {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:visited,
+  &:link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+// Utiliy classes
+
+.u-text-center {
+  text-align: center;
+}
+.u-align-center {
+  @include absolute-center;
+}
+.u-align-top {
+  @include absolute-top;
+}
+.u-align-bottom {
+  @include absolute-bottom;
+}
+.u-font-enf {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.u-reset-anchor {
+  @include reset-anchor;
+}
+.u-checkbox-hide {
+  display: none;
+}
+.u-margin-bottom-sm {
+  margin-bottom: 2rem;
+}
+.u-margin-bottom-md {
+  margin-bottom: 2.5rem;
+}
+
+.u-margin-bottom-lg {
+  margin-bottom: 3.5rem;
+}
+// Animations
+
+// Media query funtion
+@mixin respond($breakpoint) {
+  @if $breakpoint == desk-big {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
+// Mixin Animations
+
+@mixin flicker($color1, $color2) {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+
+  @keyframes flicker {
+    0% {
+      color: $color1;
+    }
+    100% {
+      color: $color2;
+    }
+  }
+}
+
+@mixin fade($direction) {
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  @if ($direction == fade) {
+    animation-name: fade;
+    @keyframes fade {
+      0% {
+        display: block;
+      }
+      90% {
+        display: block;
+      }
+      100% {
+        display: none;
+      }
+    }
+  }
+  @if ($direction == show) {
+    animation-name: show;
+    @keyframes show {
+      0% {
+        display: none;
+      }
+      100% {
+        display: block;
+      }
+    }
+  }
+}

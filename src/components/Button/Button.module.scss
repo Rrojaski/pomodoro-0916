@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.Button {
+  text-decoration: none;
+  word-wrap: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: $white;
+  color: $blue;
+  border-radius: 2px;
+  padding: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  &::selection {
+    background: none;
+  }
+  &:hover {
+    transform: translateY(-0.6rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+  &:active {
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.3rem);
+  }
+}
+
+
+.button-secondary {
+    padding: 0.5rem 1rem;
+}
