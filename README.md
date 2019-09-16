@@ -1,6 +1,6 @@
 # Pomodoro-0916
 
-Utility app built with Redux designed to keep track of track of stufy and rest sessions
+Utility app built with Redux designed to keep track of study sessions and ensuing breaks
 
 ## Getting Started
 
