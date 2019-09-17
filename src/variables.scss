@@ -39,8 +39,8 @@ $line-height-sm: 2rem;
 
 // Default sizes
 $grid-width: 114rem;
-$gutter-horizontal: 1.5rem;
-$gutter-vertical: 0.5rem;
+$gutter-horizontal: 4rem;
+$gutter-vertical: 1rem;
 
 // Sass Mixin
 
@@ -112,10 +112,10 @@ $gutter-vertical: 0.5rem;
   display: none;
 }
 .u-margin-bottom-sm {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .u-margin-bottom-md {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .u-margin-bottom-lg {

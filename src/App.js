@@ -13,6 +13,7 @@ import {
 import Timer from "./components/Timer/Timer";
 import TimerControllers from "./components/TimerControllers/TimerControllers";
 import Sound from "./components/Sound/Sound";
+import { Row, Col } from "./components/Grid/Grid";
 
 import "./App.scss";
 
@@ -63,16 +64,18 @@ class App extends Component {
       console.log(`${minutes} : ${seconds}`);
       this.props.setCurrentTime(`${minutes} : ${seconds}`);
       if (time == 0) {
-        if (this.state.cycle === "Session") {
+        if (this.props.cycle === "Session") {
+          console.log("Switching to break");
           // @Desc
           // If Session ran out switch to break
           this.props.setCycle("Break");
-          this.prop.setTimerRunning(false);
+          this.props.setTimerRunning(false);
           clearInterval(this.props.timerId);
           this.startTimer(this.props.breakTime);
         } else {
+          console.log("Switching to session");
           this.props.setCycle("Session");
-          this.prop.setTimerRunning(false);
+          this.props.setTimerRunning(false);
           clearInterval(this.props.timerId);
           this.startTimer(this.props.workTime);
         }
@@ -83,9 +86,15 @@ class App extends Component {
   render(props) {
     return (
       <div className="App">
-        <h1>POMODORO CLOCK</h1>
-        <Timer startTimer={this.startTimer} />
-        <TimerControllers />
+        <Row>
+          <h1 className="u-margin-bottom-sm">POMODORO CLOCK</h1>
+          <Col size="col-1-of-2">
+            <Timer startTimer={this.startTimer} />
+          </Col>
+          <Col size="col-1-of-2">
+            <TimerControllers />
+          </Col>
+        </Row>
       </div>
     );
   }
@@ -93,6 +102,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
+    cycle: state.allReducer.cycle,
     currentTime: state.allReducer.currentTime,
     timerId: state.allReducer.timerId,
     workTime: state.allReducer.workTime,

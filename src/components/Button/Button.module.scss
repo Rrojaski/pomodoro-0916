@@ -8,7 +8,7 @@
   background-color: $white;
   color: $blue;
   border-radius: 2px;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   font-weight: 600;
   &::selection {
@@ -24,7 +24,21 @@
   }
 }
 
-
 .button-secondary {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.play {
+  display: block;
+  background: none;
+  font-size: 5rem;
+
+  &:hover {
+    transform: translateY(-0.6rem);
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: none;
+    transform: translateY(-0.3rem);
+  }
 }

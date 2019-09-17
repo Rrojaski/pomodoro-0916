@@ -5,7 +5,9 @@ const Text = props => {
   return (
     <span
       onClick={props.onClick}
-      className={`${styles.Text} ${styles[props.size]}`}
+      className={`${styles.Text} ${styles[props.size]} ${
+        styles[props.className]
+      }`}
     >
       {props.children}
     </span>

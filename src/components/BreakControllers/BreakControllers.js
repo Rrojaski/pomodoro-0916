@@ -29,7 +29,7 @@ class BreakControllers extends Component {
   render() {
     return (
       <div className="controller u-center">
-        <Text>Break Length</Text>
+        <Text className="u-margin-bottom-sm">Break Length</Text>
         <br />
         <Button onClick={this.handleBreakIncrement}> + </Button>
         <Text>{this.props.breakTime}</Text>

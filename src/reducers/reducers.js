@@ -44,6 +44,9 @@ export const timeReducer = (state = initialState, { type, payload }) => {
     case SET_CURRENT_TIME:
       return { ...state, currentTime: payload };
       break;
+    case SET_CYCLE:
+      return { ...state, cycle: payload };
+      break;
     default:
       return state;
   }

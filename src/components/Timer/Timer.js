@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./Timer.module.scss";
+
 // Redux
 import { connect } from "react-redux";
 import {
@@ -10,6 +12,8 @@ import {
 
 // Components
 import Text from "../Text/Text";
+import { Col } from "../Grid/Grid";
+import Button from "../Button/Button";
 
 class Timer extends Component {
   constructor(props) {
@@ -30,10 +34,13 @@ class Timer extends Component {
   render() {
     return (
       <div className="timer u-text-center u-margin-bottom-md">
-        <Text className="count-down" size="lg" onClick={this.timer}>
+        <Text className="count-down" size="lg">
           {this.props.currentTime}
         </Text>
         <Text>{this.props.cycle}</Text>
+        <Button onClick={this.timer} type="play">
+          ⏯️
+        </Button>
       </div>
     );
   }

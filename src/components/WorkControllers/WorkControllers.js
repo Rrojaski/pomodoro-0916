@@ -33,7 +33,7 @@ class WorkControllers extends Component {
   render(props) {
     return (
       <div className="controller u-margin-bottom-sm">
-        <Text>Session Length</Text>
+        <Text className='u-margin-bottom-sm'>Session Length</Text>
         <br />
         <Button onClick={this.handleWorkIncrement}> + </Button>
         <Text>{this.props.workTime}</Text>
